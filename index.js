@@ -112,6 +112,10 @@ run().catch(console.dir);
 app.get("/", (req, res) => {
   res.send("Running Genius Car Server");
 });
+// api Heroku check
+app.get("/hero", (req, res) => {
+  res.send("Running Genius Car Server on Heroku");
+});
 
 // Listening port
 app.listen(port, () => {
