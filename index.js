@@ -66,12 +66,12 @@ async function run() {
       res.send(product);
     });
 
-    // Post API-- to create / add service to all service
-    // app.post("/service", async (req, res) => {
-    //   const newService = req.body;
-    //   const result = await serviceCollection.insertOne(newService);
-    //   res.send(result);
-    // });
+    // Post API-- to create / add Fruit to all Fruits
+    app.post("/fruits", async (req, res) => {
+      const newFruit = req.body;
+      const result = await vegCollection.insertOne(newFruit);
+      res.send(result);
+    });
     // get all Orders
     // app.get("/orders", verifyJWT,  async (req, res) => {
     //   //  je shdhu mstro login korsa ache tar info onujayi tar ordergulo dekhabe.
@@ -89,20 +89,20 @@ async function run() {
     //     res.status(403).send({message: 'Forbidden Access'});
     //   }
     // });
-    // Post API-- to create / add Order to all OrderCollection
+    // Post API-- to create / add Order to all VegCollection
     // app.post("/order", async (req, res) => {
     //   const newOrder = req.body;
     //   const result = await orderCollection.insertOne(newOrder);
     //   res.send(result);
     // });
 
-    // Post API-- to Delete service
-    // app.delete("/service/:id", async (req, res) => {
-    //   const id = req.params.id;
-    //   const query = { _id: ObjectId(id) };
-    //   const result = await serviceCollection.deleteOne(query);
-    //   res.send(result);
-    // });
+    // Post API-- to Delete Fruit
+    app.delete("/fruits/:id", async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: ObjectId(id) };
+      const result = await vegCollection.deleteOne(query);
+      res.send(result);
+    });
   } finally {
     // await client.close();
   }
